@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0d192b; }
+
+.card {
+  width: 35rem;
+  padding: 2.4rem 2.4rem 3.2rem 2.4rem;
+  background: #14253d;
+  box-shadow: 0px 2.5rem 5rem rgba(0, 0, 0, 0.0952917);
+  border-radius: 1.5rem;
+  margin: 0 2.4rem; }
+  @media only screen and (max-width: 25em) {
+    .card {
+      width: 32.7rem;
+      padding: 2.4rem 2.5rem 3.2rem 2.4rem; } }
+  .card__img-container {
+    border-radius: .8rem;
+    margin-bottom: 2.4rem;
+    overflow: hidden;
+    position: relative; }
+    .card__img-container:hover {
+      cursor: pointer; }
+  .card__img {
+    display: block;
+    width: 100%;
+    height: auto; }
+  .card__img-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background: rgba(0, 255, 247, 0.5);
+    mix-blend-mode: normal;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .2s ease-in; }
+  .card__img-container:hover .card__img-overlay {
+    opacity: 1;
+    width: 150%;
+    height: 150%; }
+  .card__heading {
+    font-weight: 600;
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+    color: white;
+    margin-bottom: 1.6rem;
+    transition: all .2s; }
+    .card__heading:hover {
+      cursor: pointer;
+      color: #00fff7; }
+    @media only screen and (max-width: 25em) {
+      .card__heading {
+        margin-bottom: 1.2rem; } }
+  .card__text {
+    font-weight: 300;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    color: #8bacda;
+    margin-bottom: 2.4rem; }
+    @media only screen and (max-width: 25em) {
+      .card__text {
+        margin-bottom: 1.6rem; } }
+  .card__caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.4rem; }
+    @media only screen and (max-width: 25em) {
+      .card__caption {
+        margin-bottom: 1.6rem; } }
+    .card__caption-eth {
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: 2rem;
+      color: #00fff7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .card__caption-eth img {
+        margin-right: .648rem; }
+    .card__caption-days {
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 2rem;
+      color: #8bacda;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .card__caption-days img {
+        margin-right: .77rem; }
+  .card__hr {
+    height: 1px;
+    background: #2f415b;
+    border: none;
+    margin-bottom: 1.6rem; }
+  .card__footer {
+    display: flex;
+    align-items: center; }
+    .card__footer-avatar {
+      width: 3.3rem;
+      border-radius: 50%;
+      border: 1px solid white;
+      margin-right: 1.6rem; }
+    .card__footer-text {
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 2rem;
+      color: #8bacda; }
+      .card__footer-text span {
+        color: white;
+        transition: all .2s; }
+        .card__footer-text span:hover {
+          cursor: pointer;
+          color: #00fff7; }

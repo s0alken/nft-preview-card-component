@@ -1,0 +1,205 @@
+//Colors
+
+//Primary
+
+$soft-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+
+//Neutral
+
+$very-dark-blue-main-bg: hsl(217, 54%, 11%);
+$very-dark-blue-card-bg: hsl(216, 50%, 16%);
+$very-dark-blue-line: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+
+//MEDIA QUERY
+
+$breakpoint: 25em; //400px
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: $very-dark-blue-main-bg;
+}
+
+.card {
+    width: 35rem;
+    padding: 2.4rem 2.4rem 3.2rem 2.4rem;
+    background: $very-dark-blue-card-bg;
+    box-shadow: 0px 2.5rem 5rem rgba(0, 0, 0, 0.0952917);
+    border-radius: 1.5rem;
+    margin: 0 2.4rem;
+
+    @media only screen and (max-width: $breakpoint) {
+        width: 32.7rem;
+        padding: 2.4rem 2.5rem 3.2rem 2.4rem;
+    }
+
+    &__img-container {
+        border-radius: .8rem;
+        margin-bottom: 2.4rem;
+        overflow: hidden;
+        position: relative;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    &__img-overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        background: rgba($cyan, .5);
+        mix-blend-mode: normal;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all .2s ease-in;
+    }
+
+    &__img-container:hover &__img-overlay {
+        opacity: 1;
+        width: 150%;
+        height: 150%;
+    }
+
+    &__heading {
+        font-weight: 600;
+        font-size: 2.2rem;
+        line-height: 2.8rem;
+        color: $white;
+        margin-bottom: 1.6rem;
+        transition: all .2s;
+
+        &:hover {
+            cursor: pointer;
+            color: $cyan;
+        }
+
+        @media only screen and (max-width: $breakpoint) {
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    &__text {
+        font-weight: 300;
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+        color: $soft-blue;
+        margin-bottom: 2.4rem;
+
+        @media only screen and (max-width: $breakpoint) {
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    &__caption {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2.4rem;
+
+        @media only screen and (max-width: $breakpoint) {
+            margin-bottom: 1.6rem;
+        }
+
+        &-eth {
+            font-weight: 600;
+            font-size: 1.6rem;
+            line-height: 2rem;
+            color: $cyan;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            img {
+                margin-right: .648rem;
+            }
+        }
+
+        &-days {
+            font-weight: 400;
+            font-size: 1.6rem;
+            line-height: 2rem;
+            color: $soft-blue;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            img {
+                margin-right: .77rem;
+            }
+        }
+    }
+
+    &__hr {
+        height: 1px;
+        background: $very-dark-blue-line;
+        border: none;
+        margin-bottom: 1.6rem;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+
+        &-avatar {
+            width: 3.3rem;
+            border-radius: 50%;
+            border: 1px solid $white;
+            margin-right: 1.6rem;
+        }
+
+        &-text {
+            font-weight: 400;
+            font-size: 1.6rem;
+            line-height: 2rem;
+            color: $soft-blue;
+
+            span {
+                color: $white;
+                transition: all .2s;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $cyan;
+                }
+            }
+        }
+    }
+
+}
