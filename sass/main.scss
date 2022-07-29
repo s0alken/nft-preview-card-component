@@ -1,20 +1,5 @@
-//Colors
-
-//Primary
-
-$soft-blue: hsl(215, 51%, 70%);
-$cyan: hsl(178, 100%, 50%);
-
-//Neutral
-
-$very-dark-blue-main-bg: hsl(217, 54%, 11%);
-$very-dark-blue-card-bg: hsl(216, 50%, 16%);
-$very-dark-blue-line: hsl(215, 32%, 27%);
-$white: hsl(0, 0%, 100%);
-
-//MEDIA QUERY
-
-$breakpoint: 25em; //400px
+@import "variables";
+@import "mixins";
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 
@@ -47,7 +32,7 @@ body {
     background: $very-dark-blue-card-bg;
     box-shadow: 0px 2.5rem 5rem rgba(0, 0, 0, 0.0952917);
     border-radius: 1.5rem;
-    margin: 0 2.4rem;
+    margin: 2.4rem;
 
     @media only screen and (max-width: $breakpoint) {
         width: 32.7rem;
@@ -60,8 +45,10 @@ body {
         overflow: hidden;
         position: relative;
 
-        &:hover {
-            cursor: pointer;
+        @include hover-support {
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 
@@ -88,10 +75,12 @@ body {
         transition: all .2s ease-in;
     }
 
-    &__img-container:hover &__img-overlay {
-        opacity: 1;
-        width: 150%;
-        height: 150%;
+    @include hover-support {
+        &__img-container:hover &__img-overlay {
+            opacity: 1;
+            width: 150%;
+            height: 150%;
+        }
     }
 
     &__heading {
@@ -102,9 +91,11 @@ body {
         margin-bottom: 1.6rem;
         transition: all .2s;
 
-        &:hover {
-            cursor: pointer;
-            color: $cyan;
+        @include hover-support {
+            &:hover {
+                cursor: pointer;
+                color: $cyan;
+            }
         }
 
         @media only screen and (max-width: $breakpoint) {

@@ -25,7 +25,7 @@ body {
   background: #14253d;
   box-shadow: 0px 2.5rem 5rem rgba(0, 0, 0, 0.0952917);
   border-radius: 1.5rem;
-  margin: 0 2.4rem; }
+  margin: 2.4rem; }
   @media only screen and (max-width: 25em) {
     .card {
       width: 32.7rem;
@@ -35,8 +35,9 @@ body {
     margin-bottom: 2.4rem;
     overflow: hidden;
     position: relative; }
-    .card__img-container:hover {
-      cursor: pointer; }
+    @media not all and (hover: none) {
+      .card__img-container:hover {
+        cursor: pointer; } }
   .card__img {
     display: block;
     width: 100%;
@@ -56,10 +57,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     transition: all .2s ease-in; }
-  .card__img-container:hover .card__img-overlay {
-    opacity: 1;
-    width: 150%;
-    height: 150%; }
+  @media not all and (hover: none) {
+    .card__img-container:hover .card__img-overlay {
+      opacity: 1;
+      width: 150%;
+      height: 150%; } }
   .card__heading {
     font-weight: 600;
     font-size: 2.2rem;
@@ -67,9 +69,10 @@ body {
     color: white;
     margin-bottom: 1.6rem;
     transition: all .2s; }
-    .card__heading:hover {
-      cursor: pointer;
-      color: #00fff7; }
+    @media not all and (hover: none) {
+      .card__heading:hover {
+        cursor: pointer;
+        color: #00fff7; } }
     @media only screen and (max-width: 25em) {
       .card__heading {
         margin-bottom: 1.2rem; } }
